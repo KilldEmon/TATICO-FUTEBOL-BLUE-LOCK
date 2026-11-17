@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Lock | Escalação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>BLUE <em>LOCK</em> <small>TEAM BUILDER</small></h1>
+    <p>Escolha personagens, monte seu time e arraste pelo campo.</p>
+  </header>
+
+  <main>
+    <aside>
+      <h2>Personagens <span id="total"></span></h2>
+
+      <input
+        id="busca"
+        placeholder="Buscar personagem..."
+        aria-label="Buscar personagem"
+      >
+
+      <select id="filtro" aria-label="Filtrar por equipe">
+        <option value="">Todas as equipes</option>
+      </select>
+
+      <p class="fontes">
+        Fotos carregadas da internet. Inclui spoilers do mangá.
+        <a
+          href="https://bluelockdle.com/blue-lock-characters.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Fonte das fotos</a>
+        ·
+        <a
+          href="https://bluelockarchive.com/characters"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Fonte alternativa</a>.
+      </p>
+
+      <div id="catalogo"></div>
+
+      <h3>Adicionar personagem personalizado</h3>
+
+      <form id="novo">
+        <input id="nome" placeholder="Nome" required>
+
+        <select id="posicao" aria-label="Posição">
+          <option>ATA</option>
+          <option>MEI</option>
+          <option>VOL</option>
+          <option>ZAG</option>
+          <option>LE</option>
+          <option>LD</option>
+          <option>GOL</option>
+          <option>PON</option>
+        </select>
+
+        <label for="foto">Link da imagem (opcional)</label>
+
+        <input
+          id="foto"
+          type="url"
+          placeholder="https://exemplo.com/personagem.webp"
+        >
+
+        <button type="submit">Adicionar ao catálogo</button>
+      </form>
+    </aside>
+
+    <section class="principal">
+      <div class="toolbar">
+        <h2>Minha escalação <span id="contagem">0/11</span></h2>
+
+        <select id="formacao" aria-label="Formação">
+          <option value="433">4-3-3</option>
+          <option value="442">4-4-2</option>
+          <option value="4231">4-2-3-1</option>
+          <option value="352">3-5-2</option>
+        </select>
+
+        <button id="organizar">Organizar formação</button>
+        <button id="limpar" class="danger">Limpar campo</button>
+      </div>
+
+      <div id="campo" class="campo">
+        <div class="meio"></div>
+        <div class="circulo"></div>
+        <div class="area esquerda"></div>
+        <div class="area direita"></div>
+        <div class="pequena esquerda"></div>
+        <div class="pequena direita"></div>
+      </div>
+
+      <h3>Banco de reservas <span id="reservasCount"></span></h3>
+
+      <div id="reservas" class="reservas"></div>
+
+      <p class="ajuda">
+        Clique em um personagem para escalar.
+        Arraste os jogadores no campo.
+        Clique em × para retirar.
+        Clique em uma reserva para colocá-la no campo.
+        A escalação é salva automaticamente neste navegador.
+      </p>
+    </section>
+  </main>
+
+  <script src="personagens.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #111719;
+  color: #f4f8f6;
+  font: 15px Arial, sans-serif;
+}
+
+header {
+  padding: 20px 28px;
+  background: #1b2527;
+  border-bottom: 2px solid #36dc80;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+h1 em {
+  font-style: normal;
+  color: #35e18a;
+}
+
+h1 small {
+  font-size: 12px;
+  color: #a7b7b0;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #afc0b6;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  max-width: 1550px;
+  margin: auto;
+}
+
+aside,
+.principal {
+  background: #1c2729;
+  border: 1px solid #344844;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+h3 {
+  font-size: 15px;
+  margin: 18px 0 10px;
+}
+
+input,
+select,
+button {
+  border: 1px solid #425852;
+  background: #253531;
+  color: white;
+  padding: 10px;
+  border-radius: 7px;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+  margin: 4px 0 9px;
+}
+
+button {
+  cursor: pointer;
+  background: #217e52;
+  border-color: #35a66c;
+}
+
+button:hover {
+  background: #2aa86b;
+}
+
+.danger {
+  background: #713535;
+  border-color: #a75151;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+
+.toolbar h2 {
+  margin: 0 auto 0 0;
+}
+
+.toolbar span,
+aside h2 span {
+  color: #7bdc9c;
+  font-size: 13px;
+}
+
+.campo {
+  width: 100%;
+  aspect-ratio: 1.72;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #bdd9c7;
+  border-radius: 8px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    #326947 0 10%,
+    #397550 10% 20%
+  );
+}
+
+.meio {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  border-left: 2px solid #b6d3bf;
+}
+
+.circulo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 17%;
+  aspect-ratio: 1;
+  border: 2px solid #b6d3bf;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.area,
+.pequena {
+  position: absolute;
+  top: 22%;
+  width: 17%;
+  height: 56%;
+  border: 2px solid #b6d3bf;
+}
+
+.pequena {
+  top: 34%;
+  height: 32%;
+  width: 7%;
+}
+
+.esquerda {
+  left: 0;
+  border-left: 0;
+}
+
+.direita {
+  right: 0;
+  border-right: 0;
+}
+
+.jogador {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  text-align: center;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.jogador:active {
+  cursor: grabbing;
+}
+
+.avatar {
+  width: 49px;
+  height: 49px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background: linear-gradient(135deg, #173e52, #269c86);
+  font-weight: bold;
+  font-size: 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.jogador label {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  background: #142322dd;
+  border-radius: 4px;
+  padding: 3px 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.jogador .remover {
+  position: absolute;
+  right: 4px;
+  top: -5px;
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: #a02b32;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.catalog-item,
+.reserva {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px;
+  border-bottom: 1px solid #35443e;
+  cursor: pointer;
+}
+
+.catalog-item:hover,
+.reserva:hover {
+  background: #30443b;
+}
+
+.catalog-item .avatar,
+.reserva .avatar {
+  width: 35px;
+  height: 35px;
+  flex: none;
+  font-size: 12px;
+  border-width: 2px;
+}
+
+.catalog-item strong,
+.reserva strong {
+  display: block;
+  font-size: 12px;
+}
+
+.catalog-item small,
+.reserva small {
+  display: block;
+  color: #9eafa5;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+#catalogo {
+  height: 440px;
+  overflow: auto;
+  margin-top: 8px;
+}
+
+.reservas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 35px;
+}
+
+.reserva {
+  border: 1px solid #3a5148;
+  border-radius: 8px;
+}
+
+.ajuda {
+  color: #a9bbb0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#novo {
+  display: grid;
+  gap: 5px;
+}
+
+#novo input {
+  margin: 0;
+}
+
+#novo label {
+  font-size: 12px;
+  color: #afc0b6;
+}
+
+.fontes {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #afc0b6;
+}
+
+.fontes a {
+  color: #7bdc9c;
+}
+
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .campo {
+    min-height: 320px;
+  }
+
+  .jogador {
+    width: 58px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .jogador label {
+    font-size: 9px;
+  }
+  
+/* ==================================
+   BOTÃO DE REMOVER RESERVAS
+================================== */
+
+.reserva {
+    position: relative;
+    padding-right: 32px;
+}
+
+.remover-reserva {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #a02b32;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.remover-reserva:hover {
+    background: #e63946;
+}
+
+}
