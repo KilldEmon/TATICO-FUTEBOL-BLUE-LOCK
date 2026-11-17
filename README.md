@@ -97,6 +97,5 @@ Desenvolvido por [**KilldEmon**](https://github.com/KilldEmon).
 
 ---
 
-⭐ Gostou do projeto? Deixe uma estrela no repositório!
 
 **[🎮 Abrir Blue Lock | Escalação](https://formationteambluelock.vercel.app/)**
